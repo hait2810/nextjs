@@ -1,11 +1,12 @@
 import React from 'react'
+import { LayoutProps } from '../../models/layout'
 
 type Props = {}
 
-const NotFound = (props: Props) => {
+const EmptyLayout = ({children}: LayoutProps) => {
   return (
-    <div>empty</div>
+    <div>{children}</div>
   )
 }
 
-export default NotFound
+export default EmptyLayout

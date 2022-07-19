@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import { LayoutProps } from "../../models/layout";
 
-type Props = {}
+type Props = {};
 
-const Layout = (props: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>index</div>
-  )
-}
+    <div>
+      Client
+      {children}
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
