@@ -4,11 +4,6 @@ import Layout from '../components/layout'
 import { AppPropsWithLayout } from '../models/layout';
 
 
-import './../components/Header/header.css';
-import './../components/Header/search';
-// import 'https://unpkg.com/aos@next/dist/aos.js';
-
-
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const LayoutWrapper = Component.Layout ?? Layout;
   return <LayoutWrapper><Component {...pageProps} /></LayoutWrapper>
