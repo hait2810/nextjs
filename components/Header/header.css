@@ -53,10 +53,6 @@ h6 {
     background: #ffffff00;
 }
 
-@font-face {
-    font-family: Geomatric;
-    src: url(./font/GMV_URW_Geometric-Medium.otf);
-}
 
 :root {
     --white-color: #fff;
