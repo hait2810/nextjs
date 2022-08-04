@@ -5,8 +5,7 @@ const cors = require("cors");
 const routerProduct = require("./routes/product");
 const routerCategory = require('./routes/categorys');
 
-const url =
-  "mongodb+srv://haidev:ahai2001@cluster0.ziydc.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://gsix:gsix@atlascluster.uyqro.mongodb.net/?retryWrites=true&w=majority";
 async function connect() {
   try {
     await mongoose.connect(url);
