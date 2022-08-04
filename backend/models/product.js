@@ -27,13 +27,6 @@ const productSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    subimg: {
-      type: [String],
-    },
-    color: {
-      type: [String],
-      require: true,
-    },
     category: {
       type: ObjectId,
       ref: "Category",
