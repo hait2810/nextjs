@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { AppPropsWithLayout } from '../models/layout';
 import '../html/assets/css/style.css'
 
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const LayoutWrapper = Component.Layout ?? Layout;
   return <LayoutWrapper><Component {...pageProps} /></LayoutWrapper>
