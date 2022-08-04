@@ -15,7 +15,19 @@ const addProduct = async (req, res) => {
       res.status(400).json({ message: "Không thêm được" });
     }
   };
+  const updateProduct = async (req, res) => {
+    try {
+      const product = await Products.findByIdAndUpdate(
+        { _id: req.params.id },
+        req.body
+      ).exec();
+      res.json(product);
+    } catch (error) {
+      res.status(400).json({ message: "Không sửa được" });
+    }
+  };
 module.exports = {
   getProducts,
-  addProduct
+  addProduct,
+  updateProduct
 };
