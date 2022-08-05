@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const cors = require("cors");
 
 const routerProduct = require("./routes/product");
+const routerCategory = require('./routes/categorys');
 
-const url =
-  "mongodb+srv://haidev:ahai2001@cluster0.ziydc.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://gsix:gsix@atlascluster.uyqro.mongodb.net/?retryWrites=true&w=majority";
 async function connect() {
   try {
     await mongoose.connect(url);
@@ -19,7 +19,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(routerProduct);
-const PORT = process.env.PORT || 3000;
+app.use(routerCategory);
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("Đang chạy cổng", PORT);
 });
