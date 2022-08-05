@@ -15,7 +15,7 @@ const initialState: IProductState = {
 }
 
 
-export const getCategory  = createAsyncThunk("category/getcategorys", async () => {
+export const getCategory  = createAsyncThunk("category/getlist", async () => {
             const res = await getCategorys()
             return res;
 })
@@ -23,7 +23,7 @@ export const createCategory = createAsyncThunk("category/create", async (categor
             const res = await AddCategory(category)
             return res;
 })
-export const DeleteCategorys = createAsyncThunk("category/DeleteCategory", async (id : any) => {
+export const DeleteCategorys = createAsyncThunk("category/remove", async (id : any) => {
     const res = await DeleteCategory(id);
     return res;
 })
@@ -53,7 +53,9 @@ const cateogorySlice = createSlice({
             state.categorys.push(payload as Icategory) 
         }),
         build.addCase(DeleteCategorys.fulfilled,(state,{payload})=>{
-            state.categorys = state.categorys.filter((item) => item._id !== payload?.id)
+            state.categorys = state.categorys.filter((item) => item._id !== payload.id)
+            console.log(payload);
+            
         }),
         build.addCase(editCategory.fulfilled,(state,{payload})=>{
             state.categorys=state.categorys=state.categorys.map((item)=>(item._id === payload?.id ? payload :item)) as Icategory[]
