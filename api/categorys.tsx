@@ -12,9 +12,9 @@ export const AddCategory = (category : Icategory) =>{
         return instance.post(url, category)
 }
 
-export const UpdateCategory = (category: Icategory, id : any) =>{
-        const url = `categorys/${id}`;
-        return instance.put(url,category)
+export const UpdateCategory = ( datacate:Icategory) =>{
+        const url = `categorys/${datacate._id}`;
+        return instance.put(url,datacate)
 }
 export const DeleteCategory = (id : any) =>{
         const url = `categorys/${id}`;
