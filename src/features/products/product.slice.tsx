@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {createProduct} from '../../../api/product'
+import {createProduct, getProducts} from '../../../api/product'
 import { Iproduct } from "../../../models/product";
 
 interface IProductState {
@@ -17,7 +17,10 @@ export const addProduct  = createAsyncThunk("product/create", async (product: Ip
             const res = await createProduct(product)
             return res;
 })
-
+export const listProducts = createAsyncThunk("product/list", async () => {
+    const res = await getProducts()
+    return res;
+})
 
 const productSlice = createSlice({
     name: "product",
@@ -26,6 +29,9 @@ const productSlice = createSlice({
     extraReducers: (build) => {
         build.addCase(addProduct.fulfilled,(state,{payload}) => {
             state.products.push(payload as Iproduct)
+        }),
+        build.addCase(listProducts.fulfilled,(state,{payload}) => {
+            state.products = payload || []
         })
     }
 })
