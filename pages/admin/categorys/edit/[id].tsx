@@ -1,26 +1,46 @@
+import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { AddCategory } from '../../../../api/categorys'
 import AdminLayout from '../../../../components/layout/admin'
-
 import { Icategory } from '../../../../models/categorys'
-import { createCategory } from '../../../../src/features/categorys/category.slice'
+import { getCategorysId, editCategory } from '../../../../src/features/categorys/category.slice'
 type Props = {}
 
-const AddCategorys = (props: Props) => {
-  
+const EditCategorys = (props: Props) => {
+
     const dispatch = useDispatch<any>();
-    const {register, handleSubmit, formState: {errors}} = useForm<any>()
-    const onAdd:SubmitHandler<any> = async (DATA:any) => {
-       try {
-        await dispatch(createCategory(DATA))
-        alert("Thành công")
-       } catch (error) {
-        console.log(error);
-        
-       }
+    const {register, reset , handleSubmit, formState: {errors}} = useForm()
+    const router = useRouter();
+    // const cate = useSelector((state: any) => state.category.category)
+    const id = router.query.id
+    
+
+    
+    useEffect(() =>{
+        (async () => {
+            const category = await dispatch(getCategorysId(id))
+        reset(category.payload?.data)
+      
+        })()
+    },[dispatch, reset , id])
+
+    const onAdd:SubmitHandler<any> = async ( cate: any) => {
+        try {
+            await dispatch(editCategory(cate))
+            console.log("cate" ,cate);
+            console.log("id", id);
+            
+            
+            
+            alert("Thành công")
+        } catch (error) {
+            console.log(error);
+            
+        }
     }
+
         
   return (
     <div>
@@ -30,7 +50,7 @@ const AddCategorys = (props: Props) => {
                         <div className="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
                             <div className="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
                                 <div className="text-4xl font-bold">
-                                    <h2>Add Category</h2>
+                                    <h2>Add Product</h2>
                                 </div>
                                 <div className="mt-4">
                                 
@@ -45,7 +65,7 @@ const AddCategorys = (props: Props) => {
                                                     className="text-sm font-medium text-gray-900 block mb-2">Name</label>
                                                 <input type="text" {...register('name', {required:true})}
                                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                                    placeholder="Name Product" />
+                                                    placeholder="Name Category" />
                                                     {errors.name && <span>Không được để trống!</span>}
                                             </div>
                                             
@@ -71,5 +91,5 @@ const AddCategorys = (props: Props) => {
     </div>
   )
 }
-AddCategorys.Layout = AdminLayout
-export default AddCategorys
+EditCategorys.Layout = AdminLayout
+export default EditCategorys
