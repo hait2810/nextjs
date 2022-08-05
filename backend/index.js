@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.json());
 app.use(routerProduct);
 app.use(routerCategory);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("Đang chạy cổng", PORT);
 });

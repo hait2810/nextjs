@@ -6,6 +6,7 @@ type Props = {}
 const Admin = (props: Props) => {
   return (
     <div>Admin</div>
+    
   )
 }
 Admin.Layout = AdminLayout
