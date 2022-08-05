@@ -67,7 +67,8 @@ const DetailProduct = (props: Props) => {
           <div className="price general_class">
             {products.data?.discount>0 ? <span className="discount">-{products.data?.discount}%</span> : ""}
             <span className="new_price">{products.data?.price - (products.data?.price*products.data?.discount/100)}₫</span>
-            {products.data?.discount > 0 ? products.data?.discount : ""}
+            {products.data?.discount > 0 ? <del className="old_price">{products.data?.price}₫</del> : ""}
+            
           </div>
           <form>
          
