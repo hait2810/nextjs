@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Script from 'next/script'
+import {useSelector, useDispatch } from 'react-redux'
+import { getCategory } from '../../src/features/categorys/category.slice'
+import Link from 'next/link'
 type Props = {}
 
 const Header = (props: Props) => {
+  const dispatch = useDispatch<any>()
+  const categoryx = useSelector((state:any)=>state.category.categorys)
+  useEffect(() => {
+           dispatch(getCategory())
+  },[])
     return (
+     
+
         <div>
          <header>
   <div className="wrapper__header-top ">
@@ -18,19 +28,21 @@ const Header = (props: Props) => {
         <nav className="main-nav mx-auto">
           <ul className="dp-flex align-items space-x-8">
 
-            <li><a className="remove__underline" href="./index.html">Trang Chủ</a></li>
+            <li><Link className="remove__underline" href="/">Trang Chủ</Link></li>
            
 
             <div className="navbar">
               <div className="dropdown">
                 <button className="dropbtn">
-                  <li><a className="remove__underline" href="./product.html">Sản phẩm</a></li>
+                  <li><a className="remove__underline" href="#">Sản phẩm</a></li>
                 </button>
 
                 <div className="dropdown-content">
-                  <a href="#">Áo</a>
-                  <a href="#">Quần</a>
-                  <a href="#">Phụ kiện</a>
+                
+                
+                  {categoryx.data?.map((item:any) => {
+                    return   <Link href={`/category/${item._id}`}>{item.name}</Link>
+                  })}
                 </div>
               </div>
             </div>
@@ -90,6 +102,8 @@ const Header = (props: Props) => {
     </div>
 
         </div>
+              
+
     )
 }
 

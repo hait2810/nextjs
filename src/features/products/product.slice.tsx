@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {createProduct, getProducts} from '../../../api/product'
+import {createProduct,getProduct, getProducts, getProductsByCategory} from '../../../api/product'
 import { Iproduct } from "../../../models/product";
 
 interface IProductState {
@@ -13,25 +13,38 @@ const initialState: IProductState = {
 }
 
 
-export const addProduct  = createAsyncThunk("product/create", async (product: Iproduct) => {
+export const addProduct  = createAsyncThunk("product/create", async (product: any) => {
             const res = await createProduct(product)
             return res;
 })
-export const listProducts = createAsyncThunk("product/list", async () => {
+export const listProducts = createAsyncThunk("product/lists", async () => {
     const res = await getProducts()
     return res;
 })
-
+export const listProduct = createAsyncThunk("product/list", async (id:any) => {
+    const res = await getProduct(id)
+    return res;
+})
+export const getProductsbyCategory = createAsyncThunk("product/listproducts", async (id:any) => {
+    const res = await getProductsByCategory(id);
+    return res
+})
 const productSlice = createSlice({
     name: "product",
     initialState,
     reducers: {},
     extraReducers: (build) => {
-        build.addCase(addProduct.fulfilled,(state,{payload}) => {
-            state.products.push(payload as Iproduct)
+        build.addCase(addProduct.fulfilled, (state,{payload}) => {
+            state.products.push(payload as any)
         }),
-        build.addCase(listProducts.fulfilled,(state,{payload}) => {
-            state.products = payload || []
+        build.addCase(listProducts.fulfilled, (state,{payload}) => {
+            state.products = payload as any
+        }),
+        build.addCase(listProduct.fulfilled, (state,{payload}) => {
+            state.product = payload
+        }),
+        build.addCase(getProductsbyCategory.fulfilled, (state, {payload}) => {
+            state.products = payload as any
         })
     }
 })

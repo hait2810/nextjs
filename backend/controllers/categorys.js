@@ -17,6 +17,8 @@ const getCategory = async (req, res) => {
   }
 };
 
+
+
 const addCategory = async (req, res) => {
   try {
     const category = await Categorys(req.body).save();

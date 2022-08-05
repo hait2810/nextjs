@@ -27,11 +27,8 @@ export const DeleteCategorys = createAsyncThunk("category/remove", async (id : a
     const res = await DeleteCategory(id);
     return res;
 })
-export const editCategory = createAsyncThunk("category/edit", async ( datacate : Icategory) => {
+export const editCategory = createAsyncThunk("category/edit", async ( datacate : any) => {
     const res = await UpdateCategory(datacate);
-   
-    console.log(res);
-     
     return res;
 })
 export const getCategorysId = createAsyncThunk("category/getCategoryId", async ( id : any) => {
@@ -45,22 +42,22 @@ const cateogorySlice = createSlice({
     name: "category",
     initialState,
     reducers: {},
-    extraReducers: (build) => {
-        build.addCase(getCategory.fulfilled,(state,{payload}) => {
-            state.categorys = payload||[]
+    extraReducers: (builder) => {
+        builder.addCase(getCategory.fulfilled,(state,{payload}) => {
+            state.categorys = payload as any
         }),
-        build.addCase(createCategory.fulfilled,(state,{payload}) => {
-            state.categorys.push(payload as Icategory) 
+        builder.addCase(createCategory.fulfilled,(state,{payload}) => {
+            state.categorys.push(payload as any) 
         }),
-        build.addCase(DeleteCategorys.fulfilled,(state,{payload})=>{
+        builder.addCase(DeleteCategorys.fulfilled,(state,{payload})=>{
             state.categorys = state.categorys.filter((item) => item._id !== payload.id)
-            console.log(payload);
+            
             
         }),
-        build.addCase(editCategory.fulfilled,(state,{payload})=>{
-            state.categorys=state.categorys=state.categorys.map((item)=>(item._id === payload?.id ? payload :item)) as Icategory[]
+        builder.addCase(editCategory.fulfilled,(state,{payload})=>{
+            state.categorys=state.categorys=state.categorys.map((item)=>(item._id === payload?.id ? payload :item!)) as Icategory[]
         }),
-        build.addCase(getCategorysId.fulfilled,(state,{payload})=>{
+        builder.addCase(getCategorysId.fulfilled,(state,{payload})=>{
             state.category = payload 
         })
     }

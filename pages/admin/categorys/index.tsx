@@ -9,9 +9,10 @@ type Props = {}
 
 const ListCategory = (props: Props) => {
     const categorys = useSelector((state: any)=>state.category.categorys)  
-    console.log(categorysf);
+
     
     const dispatch = useDispatch<any>()
+    
     useEffect(() =>{
         ( async () => { 
         await dispatch(getCategory())

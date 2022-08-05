@@ -339,7 +339,7 @@ main {
     background-image: url(https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png);
     background-size: 50px 50px; */
     /* background: #85c4df52; */
-    /* margin: 50px 0; */
+    margin: 50px 0;
     width: auto;
     border-bottom: 1px solid var(--light-gray);
 }
@@ -358,7 +358,7 @@ main {
 }
 
 .new__products .products {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 30px;
 }
 
@@ -378,6 +378,8 @@ main {
 
 .new__products .product__img {
     margin: 0 auto;
+    height: 300px;
+    width: 100%;
 }
 
 .new__products .product__name {

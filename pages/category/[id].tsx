@@ -1,22 +1,29 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProductsbyCategory } from '../../src/features/products/product.slice'
 
-type ProductProps = {
-  products: any[]
-}
+type Props = {}
 
-
-const Home = ({products}: ProductProps) => {
-  if(!products) return null
-
-  
-  return (
+const DetailCategory = (props: Props) => {
+    const router = useRouter()
+    const id = router.query.id
+    const dispatch = useDispatch<any>();
+    const products = useSelector((state:any) => state.product.products)
+    console.log(products);
+    console.log(id);
     
-       <section className="new__products">
+    useEffect(() => {
+            dispatch(getProductsbyCategory(id))
+    }, [id])
+  return (
+    <div>
+ <section className="new__products">
       <div className="container">
-        <h2 className="title">sản phẩm mới nhất</h2>
+        <h2 className="title">Danh mục sản phẩm</h2>
         <div className="products dp-grid">
-         {products && products.map((item) => {
+         {products.data?.map((item:any) => {
           return  <div key={item.id} className="product" data-aos="fade-down">
           <Link href={`detail/${item._id}`}
             ><img
@@ -40,21 +47,7 @@ const Home = ({products}: ProductProps) => {
         </div>
       </div> 
     </section>
-   
+    </div>
   )
 }
-
-
-export const getStaticProps: GetStaticProps<ProductProps> = async (context:GetStaticPropsContext) => {
-      const response = await fetch(`http://localhost:8080/products`);
-      const data = await response.json()
-      return {
-        props: {
-          products: data,
-        },
-        revalidate: 60
-      }
-
-}
-
-export default Home
+export default DetailCategory
