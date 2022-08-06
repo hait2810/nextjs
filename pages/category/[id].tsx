@@ -25,7 +25,7 @@ const DetailCategory = (props: Props) => {
         <div className="products dp-grid">
          {products.data?.map((item:any) => {
           return  <div key={item.id} className="product" data-aos="fade-down">
-          <Link href={`detail/${item._id}`}
+          <Link href={`/detail/${item._id}`}
             ><img
               src={item.img}
               alt=""
@@ -33,7 +33,7 @@ const DetailCategory = (props: Props) => {
           /></Link>
           {item.discount > 0 ? <span className="promotion"> -{item.discount}% </span> : ''}
           <h3 className="product__name">
-            <Link className="remove__underline" href={`detail/${item._id}`}
+            <Link className="remove__underline" href={`/detail/${item._id}`}
               >{item.name}
             </Link>
           </h3>

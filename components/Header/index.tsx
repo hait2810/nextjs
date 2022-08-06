@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Script from 'next/script'
 import {useSelector, useDispatch } from 'react-redux'
 import { getCategory } from '../../src/features/categorys/category.slice'
@@ -8,8 +8,20 @@ type Props = {}
 const Header = (props: Props) => {
   const dispatch = useDispatch<any>()
   const categoryx = useSelector((state:any)=>state.category.categorys)
+  
+  const [carts, setCart] = useState(0);
+  
+  const getCart = () => {
+      if(localStorage.getItem("cart")) {
+    setCart(JSON.parse(localStorage.getItem('cart') as any).length)
+      }
+  }
+  
+  console.log(carts);
+  
   useEffect(() => {
            dispatch(getCategory())
+           getCart()
   },[])
     return (
      
@@ -59,9 +71,9 @@ const Header = (props: Props) => {
           <a href="#" className="search"><img
               src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/search-circle-outline_lcluu7.svg"
               alt="" /></a>
-          <a href="" className="cart">
-            <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/bag-outline_dbqere.svg" alt="" />
-            <span className="count">0</span>
+          <a href="/cart" className="cart">
+                      <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/bag-outline_dbqere.svg" alt="" />
+            <span className="count">{carts}</span>
           </a>
         </div>
 

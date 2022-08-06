@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link'
+import NumberFormat from 'react-number-format'
 
 type ProductProps = {
   products: any[]
@@ -31,8 +32,8 @@ const Home = ({products}: ProductProps) => {
             </Link>
           </h3>
           <div className="product__price">
-            <span className="new__price">{item.price - (item.price * item.discount/100)}₫</span>
-           {item.discount > 0 ?  <del className="old__price">{item.price}₫</del> : ""}
+            <span className="new__price"><NumberFormat value={item.price - (item.price * item.discount/100)} displayType={'text'} thousandSeparator={true} prefix={''} />₫</span>
+           {item.discount > 0 ?  <del className="old__price"><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} />₫</del> : ""}
           </div>
         </div>
          })}
