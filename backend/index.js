@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const routerProduct = require("./routes/product");
 const routerCategory = require('./routes/categorys');
+const routerCart = require('./routes/cart');
 
 const url = "mongodb+srv://gsix:gsix@atlascluster.uyqro.mongodb.net/?retryWrites=true&w=majority";
 async function connect() {
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use(routerProduct);
 app.use(routerCategory);
+app.use(routerCart)
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("Đang chạy cổng", PORT);

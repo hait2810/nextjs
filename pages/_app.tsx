@@ -7,6 +7,7 @@ import '../html/assets/css/style.css'
 // import './../html/assets/js/banner'
 
 import '../html/assets/css/detail.css'
+import '../html/assets/css/cart.css'
 import { Provider } from "react-redux";
 import { store } from "../src/app/store";
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
