@@ -1,14 +1,13 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link'
-import NumberFormat from 'react-number-format'
 
 type ProductProps = {
   products: any[]
 }
 
 
-const Home = ({products}: ProductProps) => {
-  if(!products) return null
+const Home = ({ products }: ProductProps) => {
+  if (!products) return null
 
   
   return (
@@ -32,8 +31,8 @@ const Home = ({products}: ProductProps) => {
             </Link>
           </h3>
           <div className="product__price">
-            <span className="new__price"><NumberFormat value={item.price - (item.price * item.discount/100)} displayType={'text'} thousandSeparator={true} prefix={''} />₫</span>
-           {item.discount > 0 ?  <del className="old__price"><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={''} />₫</del> : ""}
+            <span className="new__price">{item.price - (item.price * item.discount/100)}₫</span>
+           {item.discount > 0 ?  <del className="old__price">{item.price}₫</del> : ""}
           </div>
         </div>
          })}
@@ -46,15 +45,15 @@ const Home = ({products}: ProductProps) => {
 }
 
 
-export const getStaticProps: GetStaticProps<ProductProps> = async (context:GetStaticPropsContext) => {
-      const response = await fetch(`http://localhost:8080/products`);
-      const data = await response.json()
-      return {
-        props: {
-          products: data,
-        },
-        revalidate: 60
-      }
+export const getStaticProps: GetStaticProps<ProductProps> = async (context: GetStaticPropsContext) => {
+  const response = await fetch(`http://localhost:8080/products`);
+  const data = await response.json()
+  return {
+    props: {
+      products: data,
+    },
+    revalidate: 60
+  }
 
 }
 

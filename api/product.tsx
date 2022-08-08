@@ -12,7 +12,7 @@ export const getProducts = () => {
 }
 export const getProduct = (id:any) => {
         const url = `products/${id}`;
-        console.log(url, id);
+        
         return instance.get(url)
 }
 export const editProduct = (product:Iproduct) => {
@@ -23,4 +23,8 @@ export const editProduct = (product:Iproduct) => {
 export const getProductsByCategory = (id:any) => {
         const url = `productsbycategory/${id}`;
         return instance.get(url)
+}
+export const removeProduct = (id:any) => {
+        const url = `products/${id}`;
+        return instance.delete(url)
 }
