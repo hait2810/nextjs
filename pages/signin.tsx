@@ -17,9 +17,9 @@ const signin = (props: Props) => {
             localStorage.setItem("user",JSON.stringify(data.payload.data))
             alert("Thành công")
           }else{
-            alert("đăng nhập không thành công")
+            alert("Đăng nhập không thành công")
           }
-            // console.log(data);
+            
     }
     useEffect(()=>{
         (async ()=> {

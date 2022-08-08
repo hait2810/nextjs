@@ -10,11 +10,18 @@ const Header = (props: Props) => {
   const categoryx = useSelector((state:any)=>state.category.categorys)
   
   const [carts, setCart] = useState(0);
+  const [user, setUser] = useState<any>();
   
   const getCart = () => {
       if(localStorage.getItem("cart")) {
     setCart(JSON.parse(localStorage.getItem('cart') as any).length)
       }
+  }
+  const getUser = () => {
+    if(localStorage.getItem("user")) {
+        setUser(JSON.parse(localStorage.getItem("user") as any)); 
+    }
+    console.log("user", user);
   }
   
 
@@ -22,7 +29,14 @@ const Header = (props: Props) => {
   useEffect(() => {
            dispatch(getCategory())
            getCart()
+           getUser()
   },[])
+  const onLogout = () => {
+      localStorage.removeItem("user")
+      console.log("hj");
+      
+      alert("Đăng xuất thành công")
+  }
     return (
      
 
@@ -58,16 +72,29 @@ const Header = (props: Props) => {
                 </div>
               </div>
             </div>
+          
             <li><a className="remove__underline" href="">Kích cỡ</a></li>
             <li><a className="remove__underline" href="">Giới thiệu</a></li>
-            <li><a className="remove__underline" href="">Liên hệ</a></li>
+            <div className="navbar">
+              <div className="dropdown">
+                <button className="dropbtn">
+                  <li><a className="remove__underline" href="#">Tài khoản</a></li>
+                </button>
+
+                <div className="dropdown-content">
+                {!user ?  <div> <Link href='/signin'>Đăng nhập</Link> 
+                   <Link href="/signup">Đăng ký</Link> </div>: ""}
+                    {user?.role == 1 ?   <div> <Link href='/admin'>Quản trị</Link> 
+                    </div> :    ""} 
+                   {user ?  <button className=' text-black font-bold py-2 px-4 rounded' type='submit' onClick={() => onLogout()}>Đăng xuất</button> : ""}
+                </div>
+              </div>
+            </div>
           </ul>
         </nav>
 
         <div className="header-right dp-flex mr-4 mx-auto ml-24">
-          <a href="./dashboard_admin.html" className="user"><img
-              src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/person-circle-outline_qryj38.svg"
-              alt="" /></a>
+        
           <a href="#" className="search"><img
               src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/search-circle-outline_lcluu7.svg"
               alt="" /></a>
