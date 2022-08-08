@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="./../assets/css/style.css">
+    <link rel="stylesheet" href="./../assets/css/table_size.scss">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon"
+        href="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="./../assets/js/main_animate.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="wrapper__header-top ">
+            <div class="container ">
+                <div class="header-top flex mx-auto ">
+                    <div class="wrapper__logo mr-auto ml-4">
+                        <!-- <a href="" class="logo remove__underline">NVH SYSTEM</a> -->
+                        <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png"
+                            alt="" width="50px">
+                    </div>
+                    <nav class="main-nav mx-auto">
+                        <ul class="dp-flex align-items space-x-8">
+
+                            <li><a class="remove__underline" href="./index.html">Trang Chủ</a></li>
+                            <!-- <li><a class="remove__underline" href="">Shop</a></li> -->
+
+                            <div class="navbar">
+                                <div class="dropdown">
+                                    <button class="dropbtn">
+                                        <li><a class="remove__underline" href="./product.html">Sản phẩm</a></li>
+                                    </button>
+
+                                    <div class="dropdown-content">
+                                        <a href="#">Áo</a>
+                                        <a href="#">Quần</a>
+                                        <a href="#">Phụ kiện</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <li><a class="remove__underline" href="">Kích cỡ</a></li>
+                            <li><a class="remove__underline" href="">Giới thiệu</a></li>
+                            <li><a class="remove__underline" href="">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-right dp-flex mr-4 mx-auto ml-24">
+                        <a href="./dashboard_admin.html" class="user"><img
+                                src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/person-circle-outline_qryj38.svg"
+                                alt="" /></a>
+                        <a href="#" class="search"><img
+                                src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/search-circle-outline_lcluu7.svg"
+                                alt="" /></a>
+                        <a href="" class="cart">
+                            <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/bag-outline_dbqere.svg"
+                                alt="" />
+                            <span class="count">0</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="modal_search">
+        <div class="container">
+            <div class="modal_search_content">
+                <div class="title dp-flex space-beetwen">
+                    <h5>TÌM KIẾM</h5>
+                    <a href="#" class="close"><img class="logo_close"
+                            src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/close-outline_zjnytp.svg"
+                            alt="" /></a>
+                </div>
+                <form action="" class="dp-flex align-items">
+                    <input type="text" name="" id="" placeholder="Tìm kiếm sản phẩm..." />
+                    <button type="submit">
+                        <img class="icon_search" src="https://cdn-icons-png.flaticon.com/512/122/122932.png" alt="" />
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content_cart">
+        <div class="container mx-auto mt-10">
+            <div class="flex shadow-md my-10">
+                <div class="w-3/4 bg-white px-10 py-10">
+                    <div class="flex justify-between border-b pb-8">
+                        <h1 class="font-semibold text-2xl">Giỏ hàng</h1>
+                        <h2 class="font-semibold text-2xl">2 sản phẩm</h2>
+                    </div>
+                    <div class="flex mt-10 mb-5">
+                        <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Chi tiết sản phẩm</h3>
+                        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                            Số lượng</h3>
+                        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                            Kích cỡ</h3>
+                        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                            Giá</h3>
+                        <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                            Thành tiền</h3>
+                    </div>
+
+
+                    <!---------------------->
+
+                    <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                        <div class="flex w-2/5">
+                            <!-- product -->
+                            <div class="w-20">
+                                <img class="h-24"
+                                    src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png"
+                                    alt="">
+                            </div>
+                            <div class="flex flex-col justify-between ml-4 flex-grow">
+                                <span class="font-bold text-sm">Product 1</span>
+                                <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-center w-1/5">
+                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+                                <path
+                                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                            </svg>
+
+                            <input class="mx-4 border text-center w-12" type="text" value="2">
+
+                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+                                <path
+                                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                            </svg>
+                        </div>
+                        <span class="text-center w-1/5 font-semibold text-sm">XL</span>
+                        <span class="text-center w-1/5 font-semibold text-sm">400.000 .vnđ</span>
+                        <span class="text-center w-1/5 font-semibold text-sm">800.000 .vnđ</span>
+
+                    </div>
+                    <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                        <div class="flex w-2/5">
+                            <!-- product -->
+                            <div class="w-20">
+                                <img class="h-24"
+                                    src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png"
+                                    alt="">
+                            </div>
+                            <div class="flex flex-col justify-between ml-4 flex-grow">
+                                <span class="font-bold text-sm">Product 1</span>
+                                <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-center w-1/5">
+                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+                                <path
+                                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                            </svg>
+
+                            <input class="mx-4 border text-center w-12" type="text" value="2">
+
+                            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+                                <path
+                                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                            </svg>
+                        </div>
+                        <span class="text-center w-1/5 font-semibold text-sm">XL</span>
+                        <span class="text-center w-1/5 font-semibold text-sm">400.000 .vnđ</span>
+                        <span class="text-center w-1/5 font-semibold text-sm">800.000 .vnđ</span>
+
+                    </div>
+
+                    <!---------------------->
+
+
+                    <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+
+                        <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512">
+                            <path
+                                d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+                        </svg>
+                        Tiếp tục mua hàng
+                    </a>
+                </div>
+
+                <div id="summary" class="w-1/4 px-8 py-10">
+                    <h1 class="font-semibold text-2xl border-b pb-8">Thanh toán</h1>
+                    <br>
+                    <div class="mt-4">
+                        <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Mã khuyến
+                            mại</label>
+                        <input type="text" id="promo" placeholder="Nhập mã của bạn" class="p-2 text-sm w-full">
+                    </div>
+                    <div class="mt-4">
+                        <label class="font-medium inline-block mb-3 text-sm uppercase">Địa chỉ nhận hàng</label>
+                        <input type="text" id="promo" placeholder="Nhập địa chỉ nhận hàng" class="p-2 text-sm w-full">
+
+                    </div>
+                    <div class="mt-4">
+                        <label class="font-medium inline-block mb-3 text-sm uppercase">Số điện thoại liên hệ</label>
+                        <input type="text" id="promo" placeholder="Nhập số điện thoại liên hệ" class="p-2 text-sm w-full">
+
+                    </div>
+                    
+                    <div class="border-t mt-8">
+                        <div class="font-semibold justify-between py-6 text-sm uppercase">
+                            <span>Tổng tiền thanh toán:</span>
+                            <br>
+                            <span class="text-rose-600">1.600.000 .vnđ</span>
+                        </div>
+                        <button
+                            class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Tiếp
+                            tục thanh toán</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer>
+        <div class="container mb-20 ">
+            <div class="footer dp-grid reveal mt-8">
+                <div class="shop_system">
+                    <h3 class="title">
+                        HỆ THỐNG CỬA HÀNG
+                    </h3>
+                    <div class="list_system">
+                        <div class="item">
+                            <h5 class="province">HỒ CHÍ MINH : </h5>
+                            <p>Quận 3 : 84 Trần Quang Diệu, Phường 14. </p>
+                            <p>Open : 9:00 - 22:00</p>
+                            <p>Quận 1 : The New Playground, Lê Lai</p>
+                            <p>Open : 10:00 - 21:30</p>
+                        </div>
+                        <div class="item">
+                            <h5 class="province">CẦN THƠ : </h5>
+                            <p>Quận Ninh Kiều : 72 Nguyễn Việt Hồng, Phường An Phú. </p>
+                            <p>Open : 9:00 - 21:30</p>
+                            <p>Hotline : 0945.696.700</p>
+                        </div>
+                        <img src="https://theme.hstatic.net/1000340796/1000856039/14/logo-bct.png?v=4" alt=""
+                            class="temp">
+                    </div>
+
+                </div>
+                <div class="policy dp-flex mx-auto">
+                    <h3 class="title">
+                        CHÍNH SÁCH
+                    </h3>
+                    <a class="remove__underline" href="">Câu hỏi thường gặp khi mua hàng</a>
+                    <a class="remove__underline" href="">Chính sách thanh toán và giao nhận</a>
+                    <a class="remove__underline" href="">Chính sách đổi trả</a>
+                    <a class="remove__underline" href="">Liên Hệ</a>
+                    <a class="remove__underline" href="">Tuyển dụng</a>
+                </div>
+                <div class="connect mx-auto">
+                    <h3 class="title">
+                        KẾT NỐI VỚI CHÚNG TÔI
+                    </h3>
+                    <div class="social">
+                        <div class="item dp-flex align-items">
+                            <a href=""> <img
+                                    src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/fb_av0kmw.png"
+                                    alt=""></a>
+                            <a class="remove__underline" href="">Facebook</a>
+                        </div>
+                        <div class="item dp-flex align-items">
+                            <a href=""> <img
+                                    src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/insta_tkjicf.png"
+                                    alt=""></a>
+                            <a class="remove__underline" href="">Instagram</a>
+                        </div>
+                        <div class="item dp-flex align-items">
+                            <a href=""> <img
+                                    src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/Group_ki1mvp.png"
+                                    alt=""></a>
+                            <a class="remove__underline" href="">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="./../assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./../assets/js/banner.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+</body>
+
+</html>
