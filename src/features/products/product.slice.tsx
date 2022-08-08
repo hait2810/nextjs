@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {createProduct,getProduct, getProducts, getProductsByCategory} from '../../../api/product'
+import {createProduct,getProduct, getProducts, getProductsByCategory, removeProduct} from '../../../api/product'
 import { Iproduct } from "../../../models/product";
 
 interface IProductState {
@@ -29,6 +29,10 @@ export const getProductsbyCategory = createAsyncThunk("product/listproducts", as
     const res = await getProductsByCategory(id);
     return res
 })
+export const delProduct = createAsyncThunk("product/delete", async (id:any) => {
+    const res = await removeProduct(id);
+    return res
+})
 const productSlice = createSlice({
     name: "product",
     initialState,
@@ -45,6 +49,9 @@ const productSlice = createSlice({
         }),
         build.addCase(getProductsbyCategory.fulfilled, (state, {payload}) => {
             state.products = payload as any
+        }),
+        build.addCase(delProduct.fulfilled, (state, {payload}) => {
+           // state.products = state.products.filter((item) => item._id !== payload.id)
         })
     }
 })

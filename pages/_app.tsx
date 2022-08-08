@@ -3,6 +3,9 @@ import type { AppProps } from 'next/app'
 import Layout from '../components/layout'
 import { AppPropsWithLayout } from '../models/layout';
 import '../html/assets/css/style.css'
+// import './../html/assets/css/banner.css'
+// import './../html/assets/js/banner'
+
 import '../html/assets/css/detail.css'
 import '../html/assets/css/cart.css'
 import { Provider } from "react-redux";
