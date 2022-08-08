@@ -22,4 +22,8 @@ export const DeleteUser = (id : any) =>{
     const url = `users/${id}`;
     return instance.delete(url)
 }
+export const UpdateUser = (user : Iuser) =>{
+    const url = `user/${user._id}`;
+    return instance.put(url,user)
+}
 

@@ -7,4 +7,5 @@ routerUser.post("/signin", signin)
 routerUser.delete('/user/:id', removeUser)
 routerUser.put('/user/:id', updateUser)
 routerUser.get('/users/', getUsers)
+routerUser.get('/user/:id', getUser)
 module.exports = routerUser

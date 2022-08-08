@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { signup, getUser, getUsers, signin, DeleteUser } from '../../../api/user'
+import { signup, getUser, getUsers, signin, DeleteUser, UpdateUser } from '../../../api/user'
 import { Iuser } from "../../../models/user";
 
 interface IProductState {
@@ -33,6 +33,10 @@ export const Deleteuser = createAsyncThunk("user/remove", async (id: any) => {
     const res = await DeleteUser(id);
     return res;
 })
+export const Edituser = createAsyncThunk("user/edit", async (id: any) => {
+    const res = await UpdateUser(id);
+    return res;
+})
 const userSlice = createSlice({
     name: "user",
     initialState,
@@ -45,13 +49,16 @@ const userSlice = createSlice({
                 state.users = payload as any
             }),
             build.addCase(listUser.fulfilled, (state, { payload }) => {
-                state.user = payload
+                state.user = payload 
             }),
             build.addCase(lognin.fulfilled, (state, { payload }) => {
                 state.user = payload
+            }),
+            build.addCase(Edituser.fulfilled, (state, { payload }) => {
+                state.user = state.user = state.users.map((item) => (item._id === payload?.id ? payload : item!)) as Iuser[]
             })
         // build.addCase(Deleteuser.fulfilled, (state, { payload }) => {
-        //     state.user = state.user.filter((item) => item._id !== payload.id)
+        //     state.user.filter((item) => item._id !== payload.id)
         // })
 
     }

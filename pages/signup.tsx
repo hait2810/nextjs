@@ -11,14 +11,9 @@ const signup = (props: Props) => {
     const dispatch = useDispatch<any>();
     const { register, handleSubmit, formState: { errors } } = useForm<any>()
     const onAdd: SubmitHandler<any> = async (DATA: any) => {
-        // try {
             await dispatch(adduser(DATA))
             console.log(DATA);
             alert("Thành công")
-        // } catch (error) {
-        //     console.log(error);
-
-        // }
     }
     return (
         <div><section className="account__page">
@@ -36,7 +31,6 @@ const signup = (props: Props) => {
                                 <button type="submit">Đăng ký</button>
                                 <div className="forgot_password">
                                     <span>Bạn đã có tài khoản?</span>
-                                    
                                     <Link className="remove__underline" href="/signin" >
                                         Đăng nhập
                                     </Link>

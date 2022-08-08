@@ -64,5 +64,12 @@ const getUsers = async (req,res) => {
     res.status(400).json({message: "Lỗi"})
   }
 }
-
-module.exports = { signup, signin, updateUser, getUsers , removeUser };
+const getUser = async (req,res) => {
+  try {
+      const user = await User.findById({_id:req.params.id}).select('role fullname email').exec()
+      res.json(user)
+  } catch (error) {
+    res.status(400).json({message: "Lỗi"})
+  }
+}
+module.exports = { signup, signin, updateUser, getUsers , removeUser, getUser };

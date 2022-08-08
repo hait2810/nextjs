@@ -17,7 +17,7 @@ const Header = (props: Props) => {
       }
   }
   
-  console.log(carts);
+
   
   useEffect(() => {
            dispatch(getCategory())

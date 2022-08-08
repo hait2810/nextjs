@@ -16,7 +16,7 @@ const Cart = (props: Props) => {
       sum+= carts[index]['quantity'] * carts[index]['price']
       
     }
-    console.log(sum);
+   
     
     
     const getCart = () => {
