@@ -10,7 +10,6 @@ const ProductList = (props: Props) => {
   const products = useSelector((state: any) => state.product.products)
   const dispatch = useDispatch<any>()
   useEffect(() => {
-
     dispatch(listProducts())
     console.log(products)
   }, [dispatch])
