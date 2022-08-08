@@ -50,9 +50,7 @@ const cateogorySlice = createSlice({
             state.categorys.push(payload as any) 
         }),
         builder.addCase(DeleteCategorys.fulfilled,(state,{payload})=>{
-            state.categorys = state.categorys.filter((item) => item._id !== payload.id)
-            
-            
+            state.categorys = state.categorys.filter((item) => item._id !== payload.id)         
         }),
         builder.addCase(editCategory.fulfilled,(state,{payload})=>{
             state.categorys=state.categorys=state.categorys.map((item)=>(item._id === payload?.id ? payload :item!)) as Icategory[]

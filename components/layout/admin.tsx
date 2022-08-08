@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Script from 'next/script'
 import React from 'react'
 import { LayoutProps } from '../../models/layout'
@@ -119,8 +120,8 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                  </a>
                               </li>
                               <li>
-                                 <a href="#"
-                                    className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                                 <a
+                                    className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group " href="/admin/products">
                                     <svg
                                        className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -128,11 +129,11 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                           d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
                                           clip-rule="evenodd"></path>
                                     </svg>
-                                    <span className="ml-3 flex-1 whitespace-nowrap">Products</span>
+                                       <span className="ml-3 flex-1 whitespace-nowrap">Products</span>
                                  </a>
                               </li>
                               <li>
-                                 <a href="#"
+                                 <a href="/admin/categorys"
                                     className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                                     <svg
                                        className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
@@ -145,7 +146,7 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                  </a>
                               </li>
                               <li>
-                                 <a href="#"
+                                 <a href="/admin/user"
                                     className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                                     <svg
                                        className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
@@ -157,7 +158,7 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                  </a>
                               </li>
                               <li>
-                                 <a href="#"
+                                 <a href="/admin/carts"
                                     className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
                                     <svg
                                        className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
