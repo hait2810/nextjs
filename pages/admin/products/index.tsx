@@ -32,7 +32,7 @@ const ProductList = (props: Props) => {
               </div>
               <div className="mt-4">
                 <div className="text-sky-500 text-lg font-semibold underline hover:text-sky-600">
-                  <a>Add</a>
+                <Link href={`products/add`}>Add</Link>
                 </div>
                 <table className="table ">
                   <thead>
