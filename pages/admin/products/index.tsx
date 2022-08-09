@@ -48,6 +48,7 @@ const ProductList = (props: Props) => {
                   <tbody>
                     {products.data?.map((item: any, index: number) => {
 
+                      // eslint-disable-next-line react/jsx-key
                       return <tr className='border-b'>
                         <th>{index + 1}</th>
                         <td>{item.name}</td>
