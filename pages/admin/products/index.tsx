@@ -22,65 +22,64 @@ const ProductList = (props: Props) => {
     }
   }
   return (
-    <div className="overflow-x-auto relative">
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" className="py-3 px-6">
-              #
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Name
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Img
-            </th>
+    <div id="main-content" className="h-full w-full relative overflow-y-auto">
+      <main>
+        <div>
+          <div className="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
+            <div className="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+              <div className="text-4xl font-bold">
+                <h2>Product</h2>
+              </div>
+              <div className="mt-4">
+                <div className="text-sky-500 text-lg font-semibold underline hover:text-sky-600">
+                  <Link href={`products/add`}>Add</Link>
+                </div>
+                <table className="table ">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Img</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Details</th>
+                      <th scope="col" />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {products.data?.map((item: any, index: number) => {
 
-            <th scope="col" className="py-3 px-6">
-              Price
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Desc
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Sửa
-            </th>
-            <th scope="col" className="py-3 px-6">
-              Xóa
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.data?.map((item: any, index: number) => {
-            return <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                {index + 1}
-              </th>
-              <td className="py-4 px-6">
-                {item.name}
-              </td>
-              <td className="py-4 px-6">
-                <img src={item.img} alt="" />
-              </td>
-              <td className="py-4 px-6">
-                {item.price}
-              </td>
-              <td className="py-4 px-6">
-                {item.desc}
-              </td>
-              <td className="py-4 px-6">
-                <Link href={`products/edit/${item._id}`}>Edit</Link>
-              </td>
-              <td className="py-4 px-6">
-                <button type="submit" onClick={() => OnRemove(item._id)} className='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>Xóa</button>
-              </td>
-            </tr>
+                      return <tr className='border-b'>
+                        <th>{index + 1}</th>
+                        <td>{item.name}</td>
+                        <td><img src={item.img} alt="" width="150px" /></td>
+                        <td>{item.price}</td>
+                        <td>{item.desc}</td>
+                        <td className='space-x-1 space-y-1'>
+                          <Link href={`products/edit/${item._id}`}>
+                            <button className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800">
+                              Edit
+                            </button>
+                          </Link>
+                          <button
+                            type="submit" onClick={() => OnRemove(item._id)}
+                            className="px-2 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-700">
+                            Delete
+                          </button>
+                        </td>
 
-          })}
+                      </tr>
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        </tbody>
-      </table>
-    </div>
+
+      </main >
+
+    </div >
 
   )
 }
