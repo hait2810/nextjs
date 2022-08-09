@@ -21,6 +21,7 @@ const Home = ({ products }: ProductProps) => {
           <h2 className="title">Sản phẩm mới nhất</h2>
           <div className="products dp-grid">
             {products && products.map((item) => {
+              // eslint-disable-next-line react/jsx-key
               return <div className="border-2 border-stone-300 rounded-lg">
                 <div key={item.id} className="product " data-aos="fade-down">
                   <Link href={`detail/${item._id}`}
