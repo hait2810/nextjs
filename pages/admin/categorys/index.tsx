@@ -69,9 +69,11 @@ const ListCategory = (props: Props) => {
 
 
                           <td className="py-4 px-6 space-x-1 space-y-1">
-                            <button className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800 py-4 px-6">
-                              <Link href={`categorys/edit/${item._id}`}>Sửa</Link>
-                            </button>
+                            <Link href={`categorys/edit/${item._id}`}>
+                              <button className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800 py-4 px-6">
+                                Edit
+                              </button>
+                            </Link>
                             <button className="px-2 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-700 py-4 px-6"
                               type="submit" onClick={() => OnRemove(item._id)} >
                               Delete

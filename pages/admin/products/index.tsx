@@ -22,7 +22,7 @@ const ProductList = (props: Props) => {
     }
   }
   return (
-    <div id="main-content" className="h-full w-full relative overflow-y-auto">     
+    <div id="main-content" className="h-full w-full relative overflow-y-auto">
       <main>
         <div>
           <div className="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
@@ -32,7 +32,7 @@ const ProductList = (props: Props) => {
               </div>
               <div className="mt-4">
                 <div className="text-sky-500 text-lg font-semibold underline hover:text-sky-600">
-                <Link href={`products/add`}>Add</Link>
+                  <Link href={`products/add`}>Add</Link>
                 </div>
                 <table className="table ">
                   <thead>
@@ -55,16 +55,18 @@ const ProductList = (props: Props) => {
                         <td>{item.price}</td>
                         <td>{item.desc}</td>
                         <td className='space-x-1 space-y-1'>
-                          <button className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800">
-                            <Link href={`products/edit/${item._id}`}>Edit</Link>
-                          </button>
+                          <Link href={`products/edit/${item._id}`}>
+                            <button className="px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800">
+                              Edit
+                            </button>
+                          </Link>
                           <button
                             type="submit" onClick={() => OnRemove(item._id)}
                             className="px-2 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-700">
                             Delete
                           </button>
                         </td>
-                        
+
                       </tr>
                     })}
                   </tbody>
@@ -76,7 +78,7 @@ const ProductList = (props: Props) => {
 
 
       </main >
-      
+
     </div >
 
   )
