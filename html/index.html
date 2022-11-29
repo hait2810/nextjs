@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GROUP 6</title>
+  <link rel="stylesheet" href="./../assets/css/style.css" />
+  <link rel="stylesheet" href="./../assets/css/banner.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon"
+    href="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="./../assets/js/main_animate.js"></script>
+
+
+  <!--Footer---->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+
+<header>
+  <div class="wrapper__header-top ">
+    <div class="container ">
+      <div class="header-top flex mx-auto ">
+        <div class="wrapper__logo mr-auto ml-4">
+          <!-- <a href="" class="logo remove__underline">NVH SYSTEM</a> -->
+          <img
+            src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658578748/1619593227974-ClownZ_-_logo_1_iz726o.png"
+            alt="" width="50px">
+        </div>
+        <nav class="main-nav mx-auto">
+          <ul class="dp-flex align-items space-x-8">
+
+            <li><a class="remove__underline" href="./index.html">Trang Chủ</a></li>
+            <!-- <li><a class="remove__underline" href="">Shop</a></li> -->
+
+            <div class="navbar">
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <li><a class="remove__underline" href="./product.html">Sản phẩm</a></li>
+                </button>
+
+                <div class="dropdown-content">
+                  <a href="#">Áo</a>
+                  <a href="#">Quần</a>
+                  <a href="#">Phụ kiện</a>
+                </div>
+              </div>
+            </div>
+            <li><a class="remove__underline" href="">Kích cỡ</a></li>
+            <li><a class="remove__underline" href="">Giới thiệu</a></li>
+            <li><a class="remove__underline" href="">Liên hệ</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right dp-flex mr-4 mx-auto ml-24">
+          <a href="./dashboard_admin.html" class="user"><img
+              src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/person-circle-outline_qryj38.svg"
+              alt="" /></a>
+          <a href="#" class="search"><img
+              src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/search-circle-outline_lcluu7.svg"
+              alt="" /></a>
+          <a href="" class="cart">
+            <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/bag-outline_dbqere.svg" alt="" />
+            <span class="count">0</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="banner">
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 2</div>
+      <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658579538/slider_2_dqeoeb.webp" style="width:100%">
+      <!-- <div class="text">Caption Text</div> -->
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 2</div>
+      <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658579538/slider_3_mdhw9o.webp" style="width:100%">
+      <!-- <div class="text">Caption Text</div> -->
+
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <!-- <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div> -->
+
+  </div>
+  <br>
+
+</div>
+
+<div class="modal_search">
+  <div class="container">
+    <div class="modal_search_content">
+      <div class="title dp-flex space-beetwen">
+        <h5>TÌM KIẾM</h5>
+        <a href="#" class="close"><img class="logo_close" src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1658798226/close-outline_zjnytp.svg" alt="" /></a>
+      </div>
+      <form action="" class="dp-flex align-items">
+        <input type="text" name="" id="" placeholder="Tìm kiếm sản phẩm..." />
+        <button type="submit">
+          <img class="icon_search" src="https://cdn-icons-png.flaticon.com/512/122/122932.png" alt="" />
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="category max-w-6xl mx-auto reveal">
+  <h2 class="title">Danh Mục</h2>
+  <div class="flex">
+    <div class="w-96 px-2 mx-auto text-white drop-shadow-xl">
+
+      <div id="category_ao" class="
+            bg-black
+            rounded-xl
+            relative
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing
+            
+            
+            ">
+        <div class="bg
+            rounded-xl
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing
+            lg:py-10 lg:px-6
+        ">
+
+          <span class="text-primary text-4xl font-semibold block mb-4 text-center">
+            ÁO
+          </span>
+          <a href="javascript:void(0)" class="
+                w-full
+                block
+                text-base
+                font-semibold
+                text-primary
+                bg-transparent
+                border border-[#fffff]
+                rounded-md
+                text-center
+                p-4
+                hover:text-green-500
+                transition
+                ">
+            Xem Chi Tiết
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="w-96 px-2 mx-auto text-white drop-shadow-xl">
+      <div id="category_quan" class="
+            bg-white
+            rounded-xl
+            relative
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing            
+            ">
+        <div class="bg
+            rounded-xl
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing
+            lg:py-10 lg:px-6
+          ">
+
+
+          <span class="text-primary text-4xl font-semibold block mb-4 text-center">
+            QUẦN
+          </span>
+          <a href="javascript:void(0)" class="
+                w-full
+                block
+                text-base
+                font-semibold
+                text-primary
+                bg-transparent
+                border border-[#fffff]
+                rounded-md
+                text-center
+                p-4
+                hover:text-green-500
+                transition
+                ">
+            Xem Chi Tiết
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="w-96 px-2 mx-auto text-white drop-shadow-xl">
+      <div id="category_phuKien" class="
+            bg-white
+            rounded-xl
+            relative
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing
+            ">
+        <!-- <h2 class="mb-5">
+        <img class="rounded-md shadow-lg shadow-inner"
+          src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+      </h2> -->
+        <div class="bg
+            rounded-xl
+            overflow-hidden
+            border border-primary border-opacity-20
+            shadow-pricing
+            lg:py-10 lg:px-6
+          ">
+          <span class="text-primary text-4xl font-semibold block mb-4 text-center">
+            PHỤ KIỆN
+          </span>
+          <a href="javascript:void(0)" class="
+                w-full
+                block
+                text-base
+                font-semibold
+                text-primary
+                bg-transparent
+                border border-[#fffff]
+                rounded-md
+                text-center
+                p-4
+                hover:text-green-500
+                transition
+                ">
+            Xem Chi Tiết
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="new__products">
+  <div class="container">
+    <h2 class="title mt-8 reveal">Tất cả sản phẩm</h2>
+    <div class="container mx-auto mt-4">
+      <div class="box_product grid gap-4 grid-cols-4 ">
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+        <div class="w-72 px-4 drop-shadow-xl reveal">
+          <div class="
+                  bg-white
+                  rounded-xl
+                  relative
+                  overflow-hidden
+                  border border-primary border-opacity-20
+                  shadow-pricing
+                  py-5
+                  px-8
+                  lg:py-10 lg:px-6
+                  2
+                  mb-10
+                  ">
+
+            <h2 class="mb-5">
+              <img class="rounded-md shadow-lg shadow-inner"
+                src="https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0210.jpg?v=1657011821000" alt="">
+            </h2>
+            <span class="text-primary font-semibold text-lg block mb-4">
+              Product 1 Product 1 Product 1 Product 1 Product 1
+            </span>
+            <div class="price flex space-x-4">
+              <p class="
+              text-sm text-slate-400 line-through
+                      pb-4
+                      mb-4
+                      ">
+                1.200.000 vnđ
+              </p>
+              <p class="
+              text-sm text-rose-600
+                      pb-4
+                      mb-4
+                      ">
+                1.000.000 vnđ
+              </p>
+
+            </div>
+
+
+            <a href="javascript:void(0)" class="
+                      w-full
+                      block
+                      text-base
+                      font-semibold
+                      text-primary
+                      bg-transparent
+                      border border-[#D4DEFF]
+                      rounded-md
+                      text-center
+                      p-4
+                      hover:text-sky-600 hover:bg-primary hover:border-primary
+                      transition
+                      ">
+              Xem Chi Tiết
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="container mb-20 ">
+    <div class="footer dp-grid reveal mt-8">
+      <div class="shop_system">
+        <h3 class="title">
+          HỆ THỐNG CỬA HÀNG
+        </h3>
+        <div class="list_system">
+          <div class="item">
+            <h5 class="province">HỒ CHÍ MINH : </h5>
+            <p>Quận 3 : 84 Trần Quang Diệu, Phường 14. </p>
+            <p>Open : 9:00 - 22:00</p>
+            <p>Quận 1 : The New Playground, Lê Lai</p>
+            <p>Open : 10:00 - 21:30</p>
+          </div>
+          <div class="item">
+            <h5 class="province">CẦN THƠ : </h5>
+            <p>Quận Ninh Kiều : 72 Nguyễn Việt Hồng, Phường An Phú. </p>
+            <p>Open : 9:00 - 21:30</p>
+            <p>Hotline : 0945.696.700</p>
+          </div>
+          <img src="https://theme.hstatic.net/1000340796/1000856039/14/logo-bct.png?v=4" alt="" class="temp">
+        </div>
+
+      </div>
+      <div class="policy dp-flex mx-auto">
+        <h3 class="title">
+          CHÍNH SÁCH
+        </h3>
+        <a class="remove__underline" href="">Câu hỏi thường gặp khi mua hàng</a>
+        <a class="remove__underline" href="">Chính sách thanh toán và giao nhận</a>
+        <a class="remove__underline" href="">Chính sách đổi trả</a>
+        <a class="remove__underline" href="">Liên Hệ</a>
+        <a class="remove__underline" href="">Tuyển dụng</a>
+      </div>
+      <div class="connect mx-auto">
+        <h3 class="title">
+          KẾT NỐI VỚI CHÚNG TÔI
+        </h3>
+        <div class="social">
+          <div class="item dp-flex align-items">
+            <a href=""> <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/fb_av0kmw.png"
+                alt=""></a>
+            <a class="remove__underline" href="">Facebook</a>
+          </div>
+          <div class="item dp-flex align-items">
+            <a href=""> <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/insta_tkjicf.png"
+                alt=""></a>
+            <a class="remove__underline" href="">Instagram</a>
+          </div>
+          <div class="item dp-flex align-items">
+            <a href=""> <img src="https://res.cloudinary.com/dsirnbuyv/image/upload/v1654737346/Group_ki1mvp.png"
+                alt=""></a>
+            <a class="remove__underline" href="">Twitter</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</footer>
+
+<script src="./../assets/js/main.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="./../assets/js/banner.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+</html>
